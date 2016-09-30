@@ -32,8 +32,7 @@
   &:extend(.clearfix all);
 
   @media (min-width: @grid-float-breakpoint) {
-    float: left;
-	padding-top: 30px;
+    float: left;;
 	
   }
 }
@@ -232,7 +231,7 @@
 // the nav the full height of the horizontal nav (above 768px).
 
 .navbar-nav {
-  margin: 62px 0 0 0;
+  margin: 0;
 
   > li > a {
     padding-top:    10px;
@@ -267,15 +266,14 @@
   // Uncollapse the nav
   @media (min-width: @grid-float-breakpoint) {
     float: left;
-    margin: 62px 0 0 0;
 
     > li {
       float: left;
       > a {
 		font-size: 20px;
 		font-weight: 300;
-        padding-top:    @navbar-padding-vertical;
-        padding-bottom: @navbar-padding-vertical;
+        padding-top:    @navbar-padding-vertical + 8;
+        padding-bottom: @navbar-padding-vertical - 8;
       }
     }
   }
