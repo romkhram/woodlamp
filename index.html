@@ -7,6 +7,7 @@
 	<link rel="stylesheet/less" type="text/css" href="less/bootstrap.less" />
 	<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" />
 	<script src="less.min.js"></script>
+
 	<style>
 .wl_sort {
 margin-top: 30px;
@@ -107,5 +108,19 @@ margin-bottom:30px;
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script>
+jQuery(document).ready(function($){
+
+    $(document).scroll(function(){
+		if ($(document).scrollTop() >= 31) {
+			$(".navbar-default").removeClass("absolute").addClass("navbar-fixed-top");
+		} else {
+			$(".navbar-default").removeClass("navbar-fixed-top").addClass("absolute");
+		}
+
+});	
+
+});	
+</script>
 </body>
 </html>
