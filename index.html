@@ -21,9 +21,6 @@ display: inline;
 margin-bottom: 45px;
 padding: 0;
 }
-.wl_sn li {
-display: inline;
-}
 .wl_img {
 box-sizing: border-box;
 border: 1px solid #999;
@@ -31,16 +28,31 @@ border: 1px solid #999;
 .wl_pictimg {
 margin-bottom:30px;
 }
-.wl_product{
-
+.top60 {
+top: 60px;
+}
+.top90 {
+top: 90px;
+}
+.top120 {
+top: 120px;
+}
+.top160 {
+top: 160px;
+}
+.top180 {
+top: 180px;
+}
+.top190 {
+top: 190px;
 }
 	</style>
 	
 </head>
-<body>
+<body data-spy="scroll" data-target="#navbar-example">
 
 		
-<nav class="navbar navbar-default absolute">
+<nav class="navbar navbar-default navbar-absolute">
   <div class="container"><div class="col-md-12">
     <!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
@@ -63,13 +75,15 @@ margin-bottom:30px;
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid --></div>
 </nav>
-		
 
-
-<div class="container" style="margin-top:180px;">
-	<div class="col-md-2 affix">
-		<ul class="wl_sn hidden-print hidden-sm hidden-xs">
-			<li><a href=""><span class="fa-stack fa-lg">
+<div class="container">
+	<div class="col-md-2 extra_link absolute">
+		<ul class="wl_sn hidden-print hidden-sm hidden-xs row absolute">
+			<li><a href=""><i class="fa fa-vk fa-lg fa-inverse"></i></a></li>
+			<li><a href=""><i class="fa fa-facebook fa-lg fa-inverse"></i></a></li>
+			<li><a href=""><i class="fa fa-instagram fa-lg fa-inverse"></i></a></li>
+			
+<!--			<li><a href=""><span class="fa-stack fa-lg">
 				<i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-vk fa-stack-1x fa-inverse"></i>
 			</span></a></li>
 			<li style="margin-left:20px; margin-right:20px;"><a href=""><span class="fa-stack fa-lg">
@@ -78,28 +92,37 @@ margin-bottom:30px;
 			<li><a href=""><span class="fa-stack fa-lg">
 				<i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
 			</span></a></li>
+-->
 		</ul>
 			
-		<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs row">
-			<ul class="nav bs-docs-sidenav">
-				<li><a href="#whats-included">Коломна</a></li>
-				<li><a href="#">Купчино</a></li>
-				<li><a href="#">Летний сад</a></li>
+		<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs row navbar-static" id="navbar-example">
+			<ul class="nav bs-docs-sidenav absolute">
+				<li class="active"><a href="#kolomna">Коломна</a></li>
+				<li><a href="#kupchino">Купчино</a></li>
+				<li><a href="#summergarden">Летний сад</a></li>
 			</ul>
 		</nav>
 	</div>
 
-	<div class="bs-docs-section">
+	<div class="bs-docs-section" id="kolomna">
 		<div class="container-fluid row">	
-			<div id="whats-included" class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
+			<div class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="Коломна" title="Коломна" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
 		</div>
 	</div>
-	<div class="bs-docs-section">
+	<div class="bs-docs-section" id="kupchino">
 		<div class="container-fluid row">	
-			<div id="whats-included" class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
+			<div class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="Купчино" /></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
+		</div>
+	</div>
+	<div class="bs-docs-section" id="summergarden">
+		<div class="container-fluid row">	
+			<div class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="Летний сад" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
@@ -113,13 +136,56 @@ jQuery(document).ready(function($){
 
     $(document).scroll(function(){
 		if ($(document).scrollTop() >= 31) {
-			$(".navbar-default").removeClass("absolute").addClass("navbar-fixed-top");
+			$(".navbar-default").removeClass("navbar-absolute").addClass("navbar-fixed-top");
 		} else {
-			$(".navbar-default").removeClass("navbar-fixed-top").addClass("absolute");
+			$(".navbar-default").removeClass("navbar-fixed-top").addClass("navbar-absolute");
 		}
+		if ($(document).scrollTop() >= 61) {
+			$(".wl_sn").removeClass("absolute").addClass("affix top120");
+		} else {
+			$(".wl_sn").removeClass("affix top120").addClass("absolute");
+		}
+		if ($(document).scrollTop() >= 91) {
+			$(".bs-docs-sidenav").removeClass("absolute").addClass("affix top190");
+		} else {
+			$(".bs-docs-sidenav").removeClass("affix top190").addClass("absolute");
+		}			
+		
 
 });	
+	
+  // Add smooth scrolling to all links
+  $(".bs-docs-sidenav li a").on('click', function(event) {
 
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+/*	
+	var topKupchino = $("#kupchino").offset();
+	$(".bs-docs-sidenav li a").click(function(){
+	
+	var hash = this.hash
+	alert(hash);
+	//$(document).scrollTop(topKupchino);
+	});	*/
+	// #66152f #199cff
 });	
 </script>
 </body>

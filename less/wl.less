@@ -1,0 +1,44 @@
+.wl_sn li {
+display: inline;
+margin: 0 15px;
+	& a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: @link-color;
+		&:hover,
+		&:focus {
+		background: @brand-primary;
+		}
+	border-radius: 50%;
+	text-align:center;
+
+		& .fa {
+		line-height: 30px;
+		}
+	}
+}
+
+
+.bs-docs-sidenav  {
+	top: 100px;
+	margin: 1px 0 0 0;
+	padding: 0;
+	& > li {
+		list-style: none;
+		& > a {
+		display: inline-block;
+		padding: @padding-small-vertical @panel-body-padding;
+		}
+		&.active a {
+		color: @brand-primary;
+		}
+	}
+}
+
+.extra_link {
+margin-top:180px;
+}
+.bs-docs-section {
+padding-top:180px;
+}
