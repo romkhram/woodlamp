@@ -51,7 +51,7 @@
 @font-family-base:        @font-family-sans-serif;
 
 @font-size-base:          14px;
-@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-large:         20px;
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
 @font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
@@ -101,11 +101,11 @@
 @padding-xs-vertical:       1px;
 @padding-xs-horizontal:     5px;
 
-@line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+@line-height-large:         38px; // extra decimals for Win 8.1 Chrome
 @line-height-small:         1.5;
 
 @border-radius-none:        0;
-@border-radius-base:        4px;
+@border-radius-base:        0;
 @border-radius-large:       6px;
 @border-radius-small:       3px;
 
@@ -145,11 +145,11 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-@btn-font-weight:                normal;
+@btn-font-weight:                300;
 
-@btn-default-color:              #333;
+@btn-default-color:              #999;
 @btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-border:             #999;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
@@ -175,7 +175,7 @@
 
 // Allows for customizing button radius independently from global border radius
 @btn-border-radius-base:         @border-radius-base;
-@btn-border-radius-large:        @border-radius-large;
+@btn-border-radius-large:        0;
 @btn-border-radius-small:        @border-radius-small;
 
 
