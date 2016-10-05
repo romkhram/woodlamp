@@ -27,6 +27,9 @@ padding: 0;
 box-sizing: border-box;
 border: 1px solid #999;
 }
+.col-md-2 .wl_img {
+cursor:pointer;
+}
 .wl_pictimg {
 margin-bottom:30px;
 }
@@ -121,7 +124,7 @@ top: 190px;
 		<div class="container-fluid row">	
 			<div class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="Купчино" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood2.jpg" alt="" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
 		</div>
 	</div>
@@ -130,7 +133,7 @@ top: 190px;
 			<div class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="Летний сад" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood2.jpg" alt="" /></div>
 		</div>
 	</div>
 </div>
@@ -161,7 +164,7 @@ jQuery(document).ready(function($){
 
 $(".col-md-2 .wl_img").click(function() {
 imgLnk = ($(this).attr("src"));
-sectionName = "#" + ($(this).parents().attr("id")) + " .col-md-8 .wl_img";
+sectionName = "#" + $(this).parents(".bs-docs-section").attr("id") + " .col-md-8 .wl_img";
 $(sectionName).attr("src");
 $(this).attr("src", $(sectionName).attr("src"));
 $(sectionName).attr("src", imgLnk);
