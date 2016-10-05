@@ -79,7 +79,7 @@ top: 190px;
   </div><!-- /.container-fluid --></div>
 </nav>
 
-<div class="container">
+<div class="container allBlock">
 	<div class="col-md-2 extra_link absolute">
 		<ul class="wl_sn hidden-print hidden-sm hidden-xs row absolute">
 			<li><a href=""><i class="fa fa-vk fa-lg fa-inverse"></i></a></li>
@@ -108,7 +108,7 @@ top: 190px;
 	</div>
 
 	<div class="bs-docs-section" id="kolomna">
-		<div class="container-fluid row">	
+		<div class="container-fluid row kolomna">	
 			<div class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/lamp_01_1.jpg" alt="Коломна" title="Коломна" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><img class="img-responsive wl_img" src="img/lamp_01_2.jpg" alt="" /></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/lamp_01_3.jpg" alt="" /></div>
@@ -157,7 +157,13 @@ jQuery(document).ready(function($){
 		}			
 		
 
-});	
+});
+
+$(".col-md-2 .wl_img").click(function() {
+imgLnk = ($(this).attr("src"));
+sectionName = "#" + ($(this).parent().parent().parent().attr("id")) + " .col-md-8 .wl_img";
+$(sectionName).attr("src", imgLnk);
+});
 	
   // Add smooth scrolling to all links
   $(".bs-docs-sidenav li a").on('click', function(event) {
@@ -174,7 +180,7 @@ jQuery(document).ready(function($){
       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
         scrollTop: $(hash).offset().top
-      }, 800, function(){
+      }, 1000, function(){
    
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
