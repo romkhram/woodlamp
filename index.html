@@ -161,7 +161,9 @@ jQuery(document).ready(function($){
 
 $(".col-md-2 .wl_img").click(function() {
 imgLnk = ($(this).attr("src"));
-sectionName = "#" + ($(this).parent().parent().parent().attr("id")) + " .col-md-8 .wl_img";
+sectionName = "#" + ($(this).parents().attr("id")) + " .col-md-8 .wl_img";
+$(sectionName).attr("src");
+$(this).attr("src", $(sectionName).attr("src"));
 $(sectionName).attr("src", imgLnk);
 });
 	
