@@ -25,7 +25,6 @@ padding: 0;
 }
 .wl_img {
 box-sizing: border-box;
-border: 1px solid #999;
 }
 .border1 {
 border: 1px solid #999;
@@ -53,6 +52,12 @@ top: 180px;
 }
 .top190 {
 top: 190px;
+}
+.removeMe {
+position: absolute;
+left: 0;
+top: 0;
+padding: 1px 16px;
 }
 	</style>
 	
@@ -122,28 +127,35 @@ top: 190px;
 
 	<div class="bs-docs-section" id="kolomna">
 		<div class="container-fluid row kolomna">	
-			<div class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/lamp_01_1.jpg" alt="Коломна" title="Коломна" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><img class="img-responsive wl_img" src="img/lamp_01_2.jpg" alt="" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/lamp_01_3.jpg" alt="" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/lamp_01_4.jpg" alt="" /></div>
+			<div class="col-md-8 col-md-offset-2 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_1.jpg" alt="" />
+<!--
+			<img class="img-responsive" src="img/lamp_01_2.jpg" alt="" />
+			<img class="img-responsive wl_img" style="position:absolute;left:0;top:0;padding: 1px 16px;" src="img/lamp_01_1.jpg" alt="Коломна" title="Коломна" />
+-->
+			</div></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_2.jpg" alt="" /></div></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_3.jpg" alt="" /></div></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_4.jpg" alt="" /></div></div>
 			<div class="col-md-2 col-xs-12"><a class="btn btn-default btn-lg col-xs-12" href="#" role="button">купить</a></div>
 			
 		</div>
 	</div>
 	<div class="bs-docs-section" id="kupchino">
 		<div class="container-fluid row">	
-			<div class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="Купчино" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood2.jpg" alt="" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
+			<div class="col-md-8 col-md-offset-2 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="Купчино" /></div></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/wood2.jpg" alt="" /></div></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div></div>
+			<div class="col-md-2 col-xs-12"><a class="btn btn-default btn-lg col-xs-12" href="#" role="button">купить</a></div>
 		</div>
 	</div>
 	<div class="bs-docs-section" id="summergarden">
 		<div class="container-fluid row">	
-			<div class="col-md-8 col-md-offset-2 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="Летний сад" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div>
-			<div class="col-md-2 col-xs-4 wl_pictimg"><img class="img-responsive wl_img" src="img/wood2.jpg" alt="" /></div>
+			<div class="col-md-8 col-md-offset-2 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="Купчино" /></div></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/wood2.jpg" alt="" /></div></div>
+			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/wood1.jpg" alt="" /></div></div>
+			<div class="col-md-2 col-xs-12"><a class="btn btn-default btn-lg col-xs-12" href="#" role="button">купить</a></div>
 		</div>
 	</div>
 </div>
@@ -179,19 +191,15 @@ $(".top190").css("top", top190minus);
 */		
 
 });
-
+// при нажатии на иконку справа
 $(".col-md-2 .wl_img").click(function() {
-	imgLnk = ($(this).attr("src"));
-	sectionName = "#" + $(this).parents(".bs-docs-section").attr("id") + " .col-md-8 .wl_img";
-	$(this).attr("src", $(sectionName).attr("src"));
-	$(sectionName).fadeOut(500);
-	setTimeout(function(){
-		$(sectionName).attr("src", imgLnk);
-	}, 500);
-	$(sectionName).fadeIn(100);
-
-//		
-
+	imgLnk = ($(this).attr("src")); // Получаем атрибут адресс изображения нажатой иконки
+	sectionName = "#" + $(this).parents(".bs-docs-section").attr("id") + " .col-md-8 .wl_img"; // Получаем класс изображения, куда будем вставлять, учитывая id блока
+	$(this).after('<img class="img-responsive removeMe" src="' + imgLnk + '" />'); // над изображением иконки добавляем клон с абсолютным позиционированием
+	$(sectionName).after('<img class="img-responsive removeMe" src="' + $(sectionName).attr("src") + '" />'); // над основным изображением добавляем клон с абсолютным позиционированием
+	$(".removeMe").fadeOut(1000); // Плавно удаляем клоны
+	$(this).attr("src", $(sectionName).attr("src")); // Меняем картинку иконки
+	$(sectionName).attr("src", imgLnk); // Меняем основную картинку
 });
 
 	
