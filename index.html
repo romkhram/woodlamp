@@ -27,6 +27,9 @@ padding: 0;
 box-sizing: border-box;
 border: 1px solid #999;
 }
+.border1 {
+border: 1px solid #999;
+}
 .col-md-2 .wl_img {
 cursor:pointer;
 }
@@ -56,7 +59,7 @@ top: 190px;
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 
-		
+<nav id="navbar-example">	
 <nav class="navbar navbar-default navbar-absolute">
   <div class="container">
 	<div class="col-md-12">
@@ -74,7 +77,13 @@ top: 190px;
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">коллекции</a></li>
+        <li style="position:static;"><a href="#">коллекции</a>
+			<ul class="nav bs-docs-sidenav absolute" style="left:0;">
+				<li class="active"><a href="#kolomna">Коломна</a></li>
+				<li><a href="#kupchino">Купчино</a></li>
+				<li><a href="#summergarden">Летний сад</a></li>
+			</ul>
+		</li>
         <li><a href="#">контакты</a></li>
         <li><a href="#">корзина (0)</a></li>
       </ul>
@@ -100,7 +109,7 @@ top: 190px;
 			</span></a></li>
 -->
 		</ul>
-			
+<!--			
 		<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs row navbar-static" id="navbar-example">
 			<ul class="nav bs-docs-sidenav absolute">
 				<li class="active"><a href="#kolomna">Коломна</a></li>
@@ -108,6 +117,7 @@ top: 190px;
 				<li><a href="#summergarden">Летний сад</a></li>
 			</ul>
 		</nav>
+-->
 	</div>
 
 	<div class="bs-docs-section" id="kolomna">
@@ -143,32 +153,47 @@ top: 190px;
 jQuery(document).ready(function($){
 
     $(document).scroll(function(){
+var top190minus = ($(".top190").css("top") - 1);
+$(".top190").css("top", top190minus);
 		if ($(document).scrollTop() >= 31) {
 			$(".navbar-default").removeClass("navbar-absolute").addClass("navbar-fixed-top");
 		} else {
 			$(".navbar-default").removeClass("navbar-fixed-top").addClass("navbar-absolute");
 		}
+
 		if ($(document).scrollTop() >= 61) {
 			$(".wl_sn").removeClass("absolute").addClass("affix top120");
 		} else {
 			$(".wl_sn").removeClass("affix top120").addClass("absolute");
 		}
 		if ($(document).scrollTop() >= 91) {
+			$(".bs-docs-sidenav").addClass("top190");
+		} else {
+			$(".bs-docs-sidenav").removeClass("top190");
+		}	
+/*		if ($(document).scrollTop() >= 91) {
 			$(".bs-docs-sidenav").removeClass("absolute").addClass("affix top190");
 		} else {
 			$(".bs-docs-sidenav").removeClass("affix top190").addClass("absolute");
 		}			
-		
+*/		
 
 });
 
 $(".col-md-2 .wl_img").click(function() {
-imgLnk = ($(this).attr("src"));
-sectionName = "#" + $(this).parents(".bs-docs-section").attr("id") + " .col-md-8 .wl_img";
-$(sectionName).attr("src");
-$(this).attr("src", $(sectionName).attr("src"));
-$(sectionName).attr("src", imgLnk);
+	imgLnk = ($(this).attr("src"));
+	sectionName = "#" + $(this).parents(".bs-docs-section").attr("id") + " .col-md-8 .wl_img";
+	$(this).attr("src", $(sectionName).attr("src"));
+	$(sectionName).fadeOut(500);
+	setTimeout(function(){
+		$(sectionName).attr("src", imgLnk);
+	}, 500);
+	$(sectionName).fadeIn(100);
+
+//		
+
 });
+
 	
   // Add smooth scrolling to all links
   $(".bs-docs-sidenav li a").on('click', function(event) {
