@@ -84,7 +84,7 @@ padding: 1px 16px;
       <ul class="nav navbar-nav navbar-right">
         <li style="position:static;"><a href="#">коллекции</a>
 			<ul class="nav bs-docs-sidenav absolute" style="left:0;">
-				<li class="active"><a href="#kolomna">Коломна</a></li>
+				<li><a href="#kolomna">Коломна</a></li>
 				<li><a href="#kupchino">Купчино</a></li>
 				<li><a href="#summergarden">Летний сад</a></li>
 			</ul>
@@ -191,15 +191,13 @@ $(".top190").css("top", top190minus);
 */		
 
 });
-// при нажатии на иконку справа
+// при нажатии на иконку:
 $(".col-md-2 .wl_img").click(function() {
 	imgLnk = ($(this).attr("src")); // Получаем атрибут адресс изображения нажатой иконки
 	sectionName = "#" + $(this).parents(".bs-docs-section").attr("id") + " .col-md-8 .wl_img"; // Получаем класс изображения, куда будем вставлять, учитывая id блока
-	$(this).after('<img class="img-responsive removeMe" src="' + imgLnk + '" />'); // над изображением иконки добавляем клон с абсолютным позиционированием
-	$(sectionName).after('<img class="img-responsive removeMe" src="' + $(sectionName).attr("src") + '" />'); // над основным изображением добавляем клон с абсолютным позиционированием
+	$(this).after('<img class="img-responsive removeMe" src="' + imgLnk + '" />').attr("src", $(sectionName).attr("src")); // над изображением иконки добавляем клон с абсолютным позиционированием, меняем иконку
+	$(sectionName).after('<img class="img-responsive removeMe" src="' + $(sectionName).attr("src") + '" />').attr("src", imgLnk); // над основным изображением добавляем клон с абсолютным позиционированием, меняем картинку
 	$(".removeMe").fadeOut(1000); // Плавно удаляем клоны
-	$(this).attr("src", $(sectionName).attr("src")); // Меняем картинку иконки
-	$(sectionName).attr("src", imgLnk); // Меняем основную картинку
 });
 
 	
