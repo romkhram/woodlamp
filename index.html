@@ -59,6 +59,9 @@ left: 0;
 top: 0;
 padding: 1px 16px;
 }
+.wl_start {
+min-height: 600px;
+}
 	</style>
 	
 </head>
@@ -76,19 +79,20 @@ padding: 1px 16px;
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img class="" src="img/wllogo.svg" alt="" /></a>
+          <a class="navbar-brand" href="#start"><img class="" src="img/wllogo.svg" alt="" /></a>
 	</div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li style="position:static;"><a href="#">коллекции</a>
-			<ul class="nav bs-docs-sidenav absolute" style="left:0;">
+		<li><a href="#start">начало</a></li>
+        <li style="position:static;"><a href="#kolomna">коллекции</a>
+<!--			<ul class="nav bs-docs-sidenav" style="left:0;">
 				<li><a href="#kolomna">Коломна</a></li>
 				<li><a href="#kupchino">Купчино</a></li>
 				<li><a href="#summergarden">Летний сад</a></li>
 			</ul>
-		</li>
+-->		</li>
         <li><a href="#">контакты</a></li>
         <li><a href="#">корзина (0)</a></li>
       </ul>
@@ -125,8 +129,22 @@ padding: 1px 16px;
 -->
 	</div>
 
+	<div class="bs-docs-section" id="start">
+		<div class="container-fluid row">	
+			<div class="col-md-10 col-md-offset-2 wl_start">
+
+			</div>
+			
+		</div>
+	</div>
+	
 	<div class="bs-docs-section" id="kolomna">
-		<div class="container-fluid row kolomna">	
+		<div class="container-fluid row">
+				<ul class="nav bs-docs-sidenav absolute">
+					<li><a href="#kolomna">Коломна</a></li>
+					<li><a href="#kupchino">Купчино</a></li>
+					<li><a href="#summergarden">Летний сад</a></li>
+				</ul>			
 			<div class="col-md-8 col-md-offset-2 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_1.jpg" alt="" />
 <!--
 			<img class="img-responsive" src="img/lamp_01_2.jpg" alt="" />
@@ -178,17 +196,17 @@ $(".top190").css("top", top190minus);
 		} else {
 			$(".wl_sn").removeClass("affix top120").addClass("absolute");
 		}
-		if ($(document).scrollTop() >= 91) {
+/*		if ($(document).scrollTop() >= 91) {
 			$(".bs-docs-sidenav").addClass("top190");
 		} else {
 			$(".bs-docs-sidenav").removeClass("top190");
 		}	
-/*		if ($(document).scrollTop() >= 91) {
+*/		if ($(document).scrollTop() >= 641) {
 			$(".bs-docs-sidenav").removeClass("absolute").addClass("affix top190");
 		} else {
 			$(".bs-docs-sidenav").removeClass("affix top190").addClass("absolute");
 		}			
-*/		
+		
 
 });
 // при нажатии на иконку:
@@ -202,7 +220,7 @@ $(".col-md-2 .wl_img").click(function() {
 
 	
   // Add smooth scrolling to all links
-  $(".bs-docs-sidenav li a").on('click', function(event) {
+  $(".nav a").on('click', function(event) {
 
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
