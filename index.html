@@ -62,6 +62,9 @@ padding: 1px 16px;
 .wl_start {
 min-height: 600px;
 }
+#start {
+margin-top: -120px;
+}
 	</style>
 	
 </head>
@@ -131,8 +134,15 @@ min-height: 600px;
 
 	<div class="bs-docs-section" id="start">
 		<div class="container-fluid row">	
-			<div class="col-md-10 col-md-offset-2 wl_start">
-
+			<div class="col-md-4 col-md-offset-3 wl_start" style="padding-top:90px;background: url(img/cord_bg_main.jpg) repeat-y top center; background-size:100%;">
+				<img class="img-responsive" src="img/lamp_main.jpg" alt="" />
+			</div>
+			<div class="col-md-5" style="color:#1faee9;font-size:78px;font-weight:100;line-height:90px;padding-top:18px;">
+			<p style="float:right;margin-top:150px;">Ябошим<br />
+ахуенные<br />
+дикомодные<br />
+суперпопулярные<br />
+люстры из дерева</p>
 			</div>
 			
 		</div>
@@ -193,15 +203,17 @@ $(".top190").css("top", top190minus);
 
 		if ($(document).scrollTop() >= 61) {
 			$(".wl_sn").removeClass("absolute").addClass("affix top120");
+			$(".navbar-default").css("background-color", "#fff");
 		} else {
 			$(".wl_sn").removeClass("affix top120").addClass("absolute");
+			$(".navbar-default").css("background-color", "transparent");
 		}
 /*		if ($(document).scrollTop() >= 91) {
 			$(".bs-docs-sidenav").addClass("top190");
 		} else {
 			$(".bs-docs-sidenav").removeClass("top190");
 		}	
-*/		if ($(document).scrollTop() >= 641) {
+*/		if ($(document).scrollTop() >= ($("#kolomna").offset().top) - 70) {
 			$(".bs-docs-sidenav").removeClass("absolute").addClass("affix top190");
 		} else {
 			$(".bs-docs-sidenav").removeClass("affix top190").addClass("absolute");
