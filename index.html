@@ -59,9 +59,6 @@ left: 0;
 top: 0;
 padding: 1px 16px;
 }
-.wl_start {
-min-height: 600px;
-}
 #start {
 margin-top: -120px;
 }
@@ -88,16 +85,16 @@ margin-top: -120px;
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-		<li><a href="#start">начало</a></li>
-        <li style="position:static;"><a href="#kolomna">коллекции</a>
+		<li><a href="#start"><!--начало-->start</a></li>
+        <li style="position:static;"><a href="#kolomna"><!--коллекции-->collection</a>
 <!--			<ul class="nav bs-docs-sidenav" style="left:0;">
 				<li><a href="#kolomna">Коломна</a></li>
 				<li><a href="#kupchino">Купчино</a></li>
 				<li><a href="#summergarden">Летний сад</a></li>
 			</ul>
 -->		</li>
-        <li><a href="#">контакты</a></li>
-        <li><a href="#">корзина (0)</a></li>
+        <li><a href="#"><!--контакты-->contacts</a></li>
+        <li><a href="#"><!--корзина-->cart (0)</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid --></div>
@@ -134,16 +131,22 @@ margin-top: -120px;
 
 	<div class="bs-docs-section" id="start">
 		<div class="container-fluid row">	
-			<div class="col-md-4 col-md-offset-2 wl_start" style="padding-top:90px;background: url(img/cord_bg_main.jpg) repeat-y top center; background-size:100%;">
+			<div class="col-md-4 col-md-offset-2 wl_start_img" style="padding-top:90px;background: url(img/cord_bg_main.jpg) repeat-y top center; background-size:100%;">
 				<img class="img-responsive" src="img/lamp_main.jpg" alt="" />
 			</div>
-			<div class="col-md-6" style="color:#1faee9;font-size:80px;font-weight:100;line-height:90px;padding-top:18px;">
-				<p style="float:right;margin-top:330px;">Ябошим<br />
+			<div class="col-md-6 wl_start_txt">
+				<p>Сreate<br />
+					modern<br />
+					functional<br />
+					trendy<br />
+					wooden lamps
+				</p> 
+<!--				<p>Ябошим<br />
 					ахуенные<br />
 					дикомодные<br />
 					суперпопулярные<br />
 					люстры из дерева
-				</p>
+				</p>-->
 			</div>
 			
 		</div>
@@ -152,9 +155,9 @@ margin-top: -120px;
 	<div class="bs-docs-section" id="kolomna">
 		<div class="container-fluid row">
 				<ul class="nav bs-docs-sidenav absolute">
-					<li><a href="#kolomna">Коломна</a></li>
-					<li><a href="#kupchino">Купчино</a></li>
-					<li><a href="#summergarden">Летний сад</a></li>
+					<li><a href="#kolomna"><!--Коломна-->Kolomna</a></li>
+					<li><a href="#kupchino"><!--Купчино-->Kupchino</a></li>
+					<li><a href="#summergarden"><!--Летний сад-->Summer garden</a></li>
 				</ul>			
 			<div class="col-md-8 col-md-offset-2 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_1.jpg" alt="" />
 <!--
@@ -192,34 +195,58 @@ margin-top: -120px;
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 <script>
 jQuery(document).ready(function($){
+	
+
+	function wlScroll(p0, p1, p2, p3) {
+		if ($(document).scrollTop() >= p0) {
+			$(p1).removeClass(p2).addClass(p3);
+		} else {
+			$(p1).removeClass(p3).addClass(p2);
+		}
+	}
 
     $(document).scroll(function(){
-var top190minus = ($(".top190").css("top") - 1);
-$(".top190").css("top", top190minus);
+		
+		var top190minus = ($(".top190").css("top") - 1);
+		$(".top190").css("top", top190minus);
+        var rgbaNavbar = $(document).scrollTop() / 3;
+		
+		if(rgbaNavbar < 100){
+			var bgColor = "rgba(255,255,255," + (rgbaNavbar / 100) + ")";
+		}else{
+			var bgColor = "rgba(255,255,255,1)";
+		}
+		$(".navbar-default").css("background-color", bgColor);
+
+		wlScroll(31, ".navbar-default", "navbar-absolute", "navbar-fixed-top");
+		wlScroll(61, ".wl_sn", "absolute", "affix top120");
+		wlScroll((($("#kolomna").offset().top) - 70), ".bs-docs-sidenav", "absolute", "affix top190");
+/*		
 		if ($(document).scrollTop() >= 31) {
 			$(".navbar-default").removeClass("navbar-absolute").addClass("navbar-fixed-top");
 		} else {
 			$(".navbar-default").removeClass("navbar-fixed-top").addClass("navbar-absolute");
-		}
+		}		
+
 
 		if ($(document).scrollTop() >= 61) {
 			$(".wl_sn").removeClass("absolute").addClass("affix top120");
-			$(".navbar-default").css("background-color", "#fff");
+			//$(".navbar-default").css("background-color", "#fff");
 		} else {
 			$(".wl_sn").removeClass("affix top120").addClass("absolute");
-			$(".navbar-default").css("background-color", "transparent");
+			//$(".navbar-default").css("background-color", "transparent");
 		}
-/*		if ($(document).scrollTop() >= 91) {
+		if ($(document).scrollTop() >= 91) {
 			$(".bs-docs-sidenav").addClass("top190");
 		} else {
 			$(".bs-docs-sidenav").removeClass("top190");
 		}	
-*/		if ($(document).scrollTop() >= ($("#kolomna").offset().top) - 70) {
+		if ($(document).scrollTop() >= ($("#kolomna").offset().top) - 70) {
 			$(".bs-docs-sidenav").removeClass("absolute").addClass("affix top190");
 		} else {
 			$(".bs-docs-sidenav").removeClass("affix top190").addClass("absolute");
 		}			
-		
+*/		
 
 });
 // при нажатии на иконку:
