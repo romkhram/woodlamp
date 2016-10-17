@@ -87,13 +87,13 @@ margin-top: -120px;
       <ul class="nav navbar-nav navbar-right">
 		<li><a href="#start"><!--начало-->start</a></li>
         <li style="position:static;"><a href="#kolomna"><!--коллекции-->collection</a>
-<!--			<ul class="nav bs-docs-sidenav" style="left:0;">
-				<li><a href="#kolomna">Коломна</a></li>
-				<li><a href="#kupchino">Купчино</a></li>
-				<li><a href="#summergarden">Летний сад</a></li>
-			</ul>
--->		</li>
-        <li><a href="#"><!--контакты-->contacts</a></li>
+			<ul class="nav bs-docs-sidenav absolute top190" style="left:0;display:none;">
+				<li><a href="#kolomna"><!--Коломна-->Kolomna</a></li>
+				<li><a href="#kupchino"><!--Купчино-->Kupchino</a></li>
+				<li><a href="#summergarden"><!--Летний сад-->Summer garden</a></li>
+			</ul>		
+		</li>
+        <li><a href="#contacts"><!--контакты-->contacts</a></li>
         <li><a href="#"><!--корзина-->cart (0)</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -106,27 +106,7 @@ margin-top: -120px;
 			<li><a href=""><i class="fa fa-vk fa-lg fa-inverse"></i></a></li>
 			<li><a href=""><i class="fa fa-facebook fa-lg fa-inverse"></i></a></li>
 			<li><a href=""><i class="fa fa-instagram fa-lg fa-inverse"></i></a></li>
-			
-<!--			<li><a href=""><span class="fa-stack fa-lg">
-				<i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-vk fa-stack-1x fa-inverse"></i>
-			</span></a></li>
-			<li style="margin-left:20px; margin-right:20px;"><a href=""><span class="fa-stack fa-lg">
-				<i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-			</span></a></li>
-			<li><a href=""><span class="fa-stack fa-lg">
-				<i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-			</span></a></li>
--->
 		</ul>
-<!--			
-		<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs row navbar-static" id="navbar-example">
-			<ul class="nav bs-docs-sidenav absolute">
-				<li class="active"><a href="#kolomna">Коломна</a></li>
-				<li><a href="#kupchino">Купчино</a></li>
-				<li><a href="#summergarden">Летний сад</a></li>
-			</ul>
-		</nav>
--->
 	</div>
 
 	<div class="bs-docs-section" id="start">
@@ -151,20 +131,9 @@ margin-top: -120px;
 			
 		</div>
 	</div>
-	
 	<div class="bs-docs-section" id="kolomna">
 		<div class="container-fluid row">
-				<ul class="nav bs-docs-sidenav absolute">
-					<li><a href="#kolomna"><!--Коломна-->Kolomna</a></li>
-					<li><a href="#kupchino"><!--Купчино-->Kupchino</a></li>
-					<li><a href="#summergarden"><!--Летний сад-->Summer garden</a></li>
-				</ul>			
-			<div class="col-md-8 col-md-offset-2 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_1.jpg" alt="" />
-<!--
-			<img class="img-responsive" src="img/lamp_01_2.jpg" alt="" />
-			<img class="img-responsive wl_img" style="position:absolute;left:0;top:0;padding: 1px 16px;" src="img/lamp_01_1.jpg" alt="Коломна" title="Коломна" />
--->
-			</div></div>
+			<div class="col-md-8 col-md-offset-2 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_1.jpg" alt="" /></div></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_2.jpg" alt="" /></div></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_3.jpg" alt="" /></div></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_4.jpg" alt="" /></div></div>
@@ -190,19 +159,19 @@ margin-top: -120px;
 			<div class="col-md-2 col-xs-12"><a class="btn btn-default btn-lg col-xs-12" href="#" role="button">купить</a></div>
 		</div>
 	</div>
+	<div class="bs-docs-section" id="contacts">
+
+	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
 <script>
 jQuery(document).ready(function($){
 	
 
 	function wlScroll(p0, p1, p2, p3) {
-		if ($(document).scrollTop() >= p0) {
-			$(p1).removeClass(p2).addClass(p3);
-		} else {
-			$(p1).removeClass(p3).addClass(p2);
-		}
+		if ($(document).scrollTop() >= p0) {$(p1).removeClass(p2).addClass(p3);}
+		else {$(p1).removeClass(p3).addClass(p2);}
 	}
 
     $(document).scroll(function(){
@@ -220,47 +189,29 @@ jQuery(document).ready(function($){
 
 		wlScroll(31, ".navbar-default", "navbar-absolute", "navbar-fixed-top");
 		wlScroll(61, ".wl_sn", "absolute", "affix top120");
-		wlScroll((($("#kolomna").offset().top) - 70), ".bs-docs-sidenav", "absolute", "affix top190");
-/*		
-		if ($(document).scrollTop() >= 31) {
-			$(".navbar-default").removeClass("navbar-absolute").addClass("navbar-fixed-top");
-		} else {
-			$(".navbar-default").removeClass("navbar-fixed-top").addClass("navbar-absolute");
-		}		
+		//wlScroll((($("#kolomna").offset().top) - 70), ".bs-docs-sidenav", "absolute", "affix top190");
 
-
-		if ($(document).scrollTop() >= 61) {
-			$(".wl_sn").removeClass("absolute").addClass("affix top120");
-			//$(".navbar-default").css("background-color", "#fff");
+		if ( $(document).scrollTop() > $("#kolomna").offset().top - 70 && $(document).scrollTop() < $("#contacts").offset().top - 1 ) {
+		$(".bs-docs-sidenav").fadeIn(500);
 		} else {
-			$(".wl_sn").removeClass("affix top120").addClass("absolute");
-			//$(".navbar-default").css("background-color", "transparent");
+		$(".bs-docs-sidenav").fadeOut(500);
 		}
-		if ($(document).scrollTop() >= 91) {
-			$(".bs-docs-sidenav").addClass("top190");
-		} else {
-			$(".bs-docs-sidenav").removeClass("top190");
-		}	
-		if ($(document).scrollTop() >= ($("#kolomna").offset().top) - 70) {
-			$(".bs-docs-sidenav").removeClass("absolute").addClass("affix top190");
-		} else {
-			$(".bs-docs-sidenav").removeClass("affix top190").addClass("absolute");
-		}			
-*/		
-
 });
-// при нажатии на иконку:
+// on click img icon:
 $(".col-md-2 .wl_img").click(function() {
-	imgLnk = ($(this).attr("src")); // Получаем атрибут адресс изображения нажатой иконки
-	sectionName = "#" + $(this).parents(".bs-docs-section").attr("id") + " .col-md-8 .wl_img"; // Получаем класс изображения, куда будем вставлять, учитывая id блока
-	$(this).after('<img class="img-responsive removeMe" src="' + imgLnk + '" />').attr("src", $(sectionName).attr("src")); // над изображением иконки добавляем клон с абсолютным позиционированием, меняем иконку
-	$(sectionName).after('<img class="img-responsive removeMe" src="' + $(sectionName).attr("src") + '" />').attr("src", imgLnk); // над основным изображением добавляем клон с абсолютным позиционированием, меняем картинку
-	$(".removeMe").fadeOut(1000); // Плавно удаляем клоны
+	imgLnk = $(this).attr("src"); // get adress of img icon
+	sectionName = "#" + $(this).parents(".bs-docs-section").attr("id") + " .col-md-8 .wl_img"; // get class of img to paste imgLnk with id parent block
+	var imgName = $(sectionName).attr("src"); // get adress of main img
+	function imgClone(p0, p1, p2) {p0.after('<img class="img-responsive removeMe" src="' + p1 + '" />').attr("src", p2);} // function: get img clone with position absolute over true img, change true img under clone
+
+	imgClone($(this), imgLnk, imgName); // run function for img icon
+	imgClone($(sectionName), imgName, imgLnk); // run function for main img
+	$(".removeMe").fadeOut(1000); // slowly remove the clone
 });
 
 	
   // Add smooth scrolling to all links
-  $(".nav a").on('click', function(event) {
+  $(".nav a,.navbar-brand").on('click', function(event) {
 
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
@@ -282,15 +233,6 @@ $(".col-md-2 .wl_img").click(function() {
     } // End if
   });
 
-/*	
-	var topKupchino = $("#kupchino").offset();
-	$(".bs-docs-sidenav li a").click(function(){
-	
-	var hash = this.hash
-	alert(hash);
-	//$(document).scrollTop(topKupchino);
-	});	*/
-	// #66152f #199cff
 });	
 </script>
 </body>
