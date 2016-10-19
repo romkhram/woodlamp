@@ -58,6 +58,7 @@ position: absolute;
 left: 0;
 top: 0;
 padding: 1px 16px;
+z-index:10;
 }
 #start {
 margin-top: -120px;
@@ -87,7 +88,7 @@ margin-top: -120px;
       <ul class="nav navbar-nav navbar-right">
 		<li><a href="#start"><!--начало-->start</a></li>
         <li style="position:static;"><a href="#kolomna"><!--коллекции-->collection</a>
-			<ul class="nav bs-docs-sidenav absolute top190" style="left:0;display:none;">
+			<ul class="nav bs-docs-sidenav absolute top190" style="left:0;display:none;font-size:18px;font-weight:300;line-height:50px;margin-top:14px;">
 				<li><a href="#kolomna"><!--Коломна-->Kolomna</a></li>
 				<li><a href="#kupchino"><!--Купчино-->Kupchino</a></li>
 				<li><a href="#summergarden"><!--Летний сад-->Summer garden</a></li>
@@ -111,10 +112,10 @@ margin-top: -120px;
 
 	<div class="bs-docs-section" id="start">
 		<div class="container-fluid row">	
-			<div class="col-md-4 col-md-offset-2 wl_start_img" style="padding-top:90px;background: url(img/cord_bg_main.jpg) repeat-y top center; background-size:100%;">
+			<div class="col-md-4 col-md-offset-2 col-xs-6 wl_start_img" style="padding-top:90px;background: url(img/cord_bg_main.jpg) repeat-y top center; background-size:100%;">
 				<img class="img-responsive" src="img/lamp_main.jpg" alt="" />
 			</div>
-			<div class="col-md-6 wl_start_txt">
+			<div class="col-md-6 col-xs-6 wl_start_txt">
 				<p>Сreate<br />
 					modern<br />
 					functional<br />
@@ -133,7 +134,14 @@ margin-top: -120px;
 	</div>
 	<div class="bs-docs-section" id="kolomna">
 		<div class="container-fluid row">
-			<div class="col-md-8 col-md-offset-2 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_1.jpg" alt="" /></div></div>
+			<!-- h2 class="col-md-10 col-md-offset-2" style="font-size:56px;font-weight:100;line-height:40px;margin-bottom:30px;">Kolomna</h2 -->
+			<div class="col-md-8 col-md-offset-2 wl_pictimg">
+			<h2 style="position:absolute;left:-15px;top:60px;font-size:60px;font-weight:100;line-height:60px;margin:0;padding: 9px 30px 21px;background:#1faee9;color:#fff;z-index:20;">Kolomna</h2>
+			<h2 style="position:absolute;left:-15px;top:180px;font-size:60px;font-weight:100;line-height:60px;margin:0;padding: 9px 30px 21px;background:#a3004f;color:#fff;z-index:20;">4200&#8381;</h2>
+			<a href="" style="position:absolute;left:-15px;top:300px;font-size:60px;font-weight:100;line-height:60px;margin:0;padding: 9px 30px 21px;background:#999;color:#fff;z-index:20;">
+			<span class="" style="display:inline-block; transform:rotate(45deg);">+</span>
+			</a>
+			<div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_1.jpg" alt="" /></div></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg" style=""><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_2.jpg" alt="" /></div></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_3.jpg" alt="" /></div></div>
 			<div class="col-md-2 col-xs-4 wl_pictimg"><div class="border1"><img class="img-responsive wl_img" src="img/lamp_01_4.jpg" alt="" /></div></div>
@@ -168,7 +176,10 @@ margin-top: -120px;
 <script>
 jQuery(document).ready(function($){
 	
-
+	var heightOn30 = $(".wl_img").outerHeight(true);
+	console.log(heightOn30);
+	//wl_pictimg
+	
 	function wlScroll(p0, p1, p2, p3) {
 		if ($(document).scrollTop() >= p0) {$(p1).removeClass(p2).addClass(p3);}
 		else {$(p1).removeClass(p3).addClass(p2);}
