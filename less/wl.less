@@ -72,6 +72,10 @@ padding-bottom: 1000px;
 		}
   }
 }
+.flex {
+display: flex;
+flex-direction: column;
+}
 
 .wl_content_position {
 position: absolute;
@@ -86,7 +90,6 @@ z-index: 20;
 	
 }
 .wl_content {
-margin: 0;
 color: #fff;
 font-size: 40px;
 font-weight: 100;
@@ -99,7 +102,6 @@ line-height: 60px;
 }
 .wl_content_block {
 .wl_content;
-.wl_content_position;
 	& h2 {
 	.wl_content;
 	display: inline-block;
@@ -107,31 +109,25 @@ line-height: 60px;
 	background:#1faee9;
 	}
 	& .wl_price {
+	position: absolute;
+	z-index: 20;
 	padding: 0 27px;
 	margin: 30px 0 0 0;
 	display: inline-block;
 	background: #a3004f;
 	clear: both;
+		@media (max-width: @screen-sm-max) {
+		bottom: 0;
+		right: 15px;
+		}
 	}
 	& .wl_content_txt {
+		.hidden-xs;
 	display: inline-block;
 	padding: 0 27px;
 	margin: 30px 0 0 0;
 	background: #999;
 	clear: both;
 	transition-duration: 0.5s;
-		& span {
-		display: inline-block;
-		transform:rotate(45deg);
-		color: #fff;
-		transition-duration: 0.5s;
-		}
-	&:hover {
-	text-decoration:none;
-	background: #967864;
-		& span {
-		transform:rotate(45deg);
-		}
-	}
 	}
 }
